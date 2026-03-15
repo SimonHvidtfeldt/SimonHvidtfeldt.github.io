@@ -38,25 +38,23 @@
         </section>
         <section class="full-width">
             
-            <h3 class="sub-header" style="font-size: 1.5rem; border-bottom: 2px solid #eee; padding-bottom: 10px;">
-                Sprog
-            </h3>
-            
-            <p class="summary-text">
-                Her er en oversigt over mine sproglige kompetencer, både mundtligt og skriftligt.
-            </p>
+
 
             <br>
 
             <div class="accordion-container">
                 
-                <div class="accordion-item">
-                    <div class="accordion-header" style="cursor: default; background-color: #f4f6f8;">
-                        <span style="color: #335372; font-weight: bold;">Dansk</span>
-                    </div>
-                    
-                    <div class="accordion-content" style="max-height: none;">
-                        <div class="inner-padding">
+<div class="accordion-item">
+    <button class="accordion-header active" onclick="toggleAccordion(this)">
+        <span style="font-weight: bold;">
+            <i class="fas fa-comment-dots" style="margin-right: 10px;"></i>
+            Dansk
+        </span>
+        <i class="fas fa-chevron-down" style="transform: rotate(180deg); transition: transform 0.3s;"></i>
+    </button>
+    
+    <div class="accordion-content" style="max-height: 500px;">
+        <div class="inner-padding">
                             
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
                                 <strong style="font-size: 0.9rem;">Niveau: Modersmål</strong>
@@ -77,13 +75,17 @@
                     </div>
                 </div>
 
-                <div class="accordion-item">
-                    <div class="accordion-header" style="cursor: default; background-color: #f4f6f8;">
-                        <span style="color: #335372; font-weight: bold;">Engelsk</span>
-                    </div>
-                    
-                    <div class="accordion-content" style="max-height: none;">
-                        <div class="inner-padding">
+<div class="accordion-item">
+    <button class="accordion-header active" onclick="toggleAccordion(this)">
+        <span style="font-weight: bold;">
+            <i class="fas fa-globe-europe" style="margin-right: 10px;"></i>
+            Engelsk
+        </span>
+        <i class="fas fa-chevron-down" style="transform: rotate(180deg); transition: transform 0.3s;"></i>
+    </button>
+    
+    <div class="accordion-content" style="max-height: 500px;">
+        <div class="inner-padding">
                             
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
                                 <strong style="font-size: 0.9rem;">Niveau: Flydende</strong>
@@ -104,13 +106,17 @@
                     </div>
                 </div>
 
-                <div class="accordion-item" style="border-bottom: none;"> 
-                    <div class="accordion-header" style="cursor: default; background-color: #f4f6f8;">
-                        <span style="color: #335372; font-weight: bold;">Tysk</span>
-                    </div>
-                    
-                    <div class="accordion-content" style="max-height: none;">
-                        <div class="inner-padding">
+<div class="accordion-item">
+    <button class="accordion-header active" onclick="toggleAccordion(this)">
+        <span style="font-weight: bold;">
+            <i class="fas fa-language" style="margin-right: 10px;"></i>
+            Tysk
+        </span>
+        <i class="fas fa-chevron-down" style="transform: rotate(180deg); transition: transform 0.3s;"></i>
+    </button>
+    
+    <div class="accordion-content" style="max-height: 500px;">
+        <div class="inner-padding">
                             
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
                                 <strong style="font-size: 0.9rem;">Niveau: Kendskab</strong>
@@ -137,7 +143,27 @@
         <div><i class="fas fa-home"></i> Toftegårdsalle 40, 3.th</div>
     </footer>
 
-</div>
+    </div> <script>
+    function toggleAccordion(element) {
+        const content = element.nextElementSibling;
+        element.classList.toggle("active");
 
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+        }
+
+        const icon = element.querySelector('i');
+        if (icon) {
+            icon.style.transition = "transform 0.3s ease";
+            if (element.classList.contains("active")) {
+                icon.style.transform = "rotate(180deg)";
+            } else {
+                icon.style.transform = "rotate(0deg)";
+            }
+        }
+    }
+    </script>
 </body>
 </html>

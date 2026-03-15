@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[SIDENS TITEL] - Simon H. Hvidtfeldt</title> <link rel="stylesheet" href="style.css">
+    <title>Simon H. Hvidtfeldt - CV</title> 
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
 
@@ -40,12 +42,201 @@
 
         <section class="full-width">
             
-            <h3 class="sub-header" style="font-size: 1.5rem; border-bottom: 2px solid #eee; padding-bottom: 10px;">
-                Projekter
-            </h3>
-            
-            <p class="summary-text">
-                Tekst kommer senere. 
-            </p>
 
             <br>
+
+            <div class="accordion-item">
+    <button class="accordion-header active" onclick="toggleAccordion(this)">
+        <span style="font-weight: bold;">
+            <i class="fas fa-project-diagram" style="margin-right: 10px;"></i>
+            Studieprojekter
+        </span>
+    <i class="fas fa-chevron-down"></i></button>
+    <div class="accordion-content" style="max-height: none;">
+        <div class="inner-padding" style="background-color: #fff; padding: 20px;">
+            <div class="accordion-container" style="border: none; display: flex; flex-direction: column; gap: 10px;">
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Fake News Project</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="inner-padding">
+                            <div class="inner-padding">
+
+                                
+                                <div style="position: relative; width: 100%; height: 600px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
+                                    <iframe src="projekter/Fake_News_Project.pdf#toolbar=0&navpanes=0&scrollbar=0" width="100%" height="600px" style="border: none;">
+                                        <p>Din browser understøtter ikke visning af PDF. 
+                                        <a href="projekter/Fake_News_Project.pdf">Klik her for at åbne filen.</a></p>
+                                    </iframe>
+                                </div>
+
+                                <div style="margin-top: 30px;">
+                                    <a href="projekter/Fake_News_Project.pdf" target="_blank" class="skill-tag" style="text-decoration: none; display: inline-block;">
+                                        <i class="fas fa-external-link-alt" style="margin-right: 8px;"></i> Åbn projektet i fuld skærm
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+<div class="accordion-item">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span style="font-weight: bold;">
+            Dit køleskab - Din ret | En webapp
+        </span>
+        <i class="fas fa-chevron-down"></i>
+    </button>
+    <div class="accordion-content">
+        <div class="inner-padding">
+            <p style="margin-bottom: 20px;">
+                Dette projekt er udviklet i faget <strong>Databases and Information Systems</strong>. Applikationen gør det muligt for brugere at håndtere deres køleskabsindhold digitalt og få opskriftsforslag baseret på de tilgængelige ingredienser.
+            </p>
+
+            <div id="dis-readme" style="background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px; padding: 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; color: #24292f;">
+                Loading dokumentation...
+            </div>
+
+            <div style="margin-top: 20px;">
+                <a href="https://github.com/JuuBobs/DIS-Project" target="_blank" class="skill-tag" style="text-decoration: none; background-color: #24292f; color: white;">
+                    <i class="fab fa-github" style="margin-right: 8px;"></i> Se kildekoden på GitHub
+                </a>
+            </div>
+        </div>
+    </div>
+
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>A hidden Markov Model of visual attention</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="inner-padding">
+                            <p>Ikke skrevet endnu, men vi arbejder på sagen.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+            </div>
+
+<div class="accordion-item">
+    <button class="accordion-header active" onclick="toggleAccordion(this)">
+        <span style="font-weight: bold;">
+            <i class="fas fa-laptop-code" style="margin-right: 10px;"></i>
+            Personlige projekter
+        </span>
+    <i class="fas fa-chevron-down"></i></button>
+    <div class="accordion-content" style="max-height: none;">
+        <div class="inner-padding" style="background-color: #fff; padding: 20px;">
+            <div class="accordion-container" style="border: none; display: flex; flex-direction: column; gap: 10px;">
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Baggrundsfjerner</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="inner-padding">
+                            <p>Jeg har desværre mistet dette projekt da jeg skiftede computer, men ikke desto mindre kan jeg stadig beskrive det. Det fungerede på følgende måde:</p>
+                            <ul class="tool-list" style="margin-top: 10px;">
+                                <li>Angiv stien til den mappe med billede du gerne vil have bearbejdet.</li>
+                                <li>Programmet vil så gennemgå alle billederne i mappen, og fjerne baggrunden.</li>
+                                <li>De bearbejdede billeder vil blive gemt i en undermappe kaldet "output".</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Personlig hjemmeside</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="inner-padding">
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+
+                            </section> </div> <footer class="bottom-bar">
+        <div><i class="fas fa-phone"></i> +45 51 33 43 61</div>
+        <div><i class="fas fa-envelope"></i> simon-hvidtfeldt@hotmail.com</div>
+        <div><i class="fas fa-home"></i> Toftegårdsalle 40, 3.th</div>
+    </footer>
+
+    </div> <script>
+var acc = document.getElementsByClassName("accordion-header");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        // Toggle 'active' klassen
+        this.classList.toggle("active");
+
+        var panel = this.nextElementSibling;
+
+        if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+        } else {
+            // FIX: Vi måler den aktuelle højde på indholdet, 
+            // præcis i det øjeblik der bliver klikket.
+            panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+
+        // FIX FOR NESTED ACCORDIONS
+        // Hvis denne accordion er inde i en anden, skal forælderen også udvides
+        var parent = this.parentElement.closest('.accordion-content');
+        if (parent) {
+            // Hvis vi åbner noget, lægger vi højden til forælderen. 
+            // Hvis vi lukker, trækker vi fra (eller sætter til auto).
+            parent.style.maxHeight = "none"; 
+            // 'none' fjerner begrænsningen helt på forælderen, så den altid passer.
+        }
+    });
+}
+</script>
+<script>
+    const disMarkdown = `
+# DIS-Project
+Project with SQL Database and WEB-app for DIS
+
+## 🚀 Quick Start: Run from Source
+
+You can either **clone** the repository via Git or **download ZIP** from GitHub. Then simply install requirements and run the app.
+
+### 1. Get the Code
+\`\`\`bash
+git clone https://github.com/JuuBobs/DIS-Project.git
+\`\`\`
+
+### 2. Install Python Dependencies
+\`\`\`bash
+pip install -r requirements.txt
+\`\`\`
+
+### 3. Run the app
+\`\`\`bash
+python app.py
+\`\`\`
+
+### 4. Open the app
+Gå til [http://127.0.0.1:5000](http://127.0.0.1:5000) i din browser.
+
+**Login oplysninger til test:**
+* **Bruger:** testuser
+* **Password:** Test123!
+    `;
+
+    // Render markdown til HTML
+    document.getElementById('dis-readme').innerHTML = marked.parse(disMarkdown);
+</script>
+</body>
+</html>

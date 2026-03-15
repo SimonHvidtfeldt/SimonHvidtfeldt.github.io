@@ -1,0 +1,28 @@
+<section id="about-me" class="full-width">
+    <h3 class="sub-header_">Om mig</h3>
+    
+    <p class="summary-text">
+        Machine Learning og Datavidenskab-studerende på KU med en stor passion for softwareudvikling. Jeg supplerer den tunge teori fra studiet med praktiske, personlige kode-projekter, hvor jeg hele tiden bygger nye færdigheder. Gennem min tidligere erfaring som Bar Manager har jeg lært at bevare overblikket i stressede situationer og kommunikere klart – kompetencer, jeg tager direkte med ind i mit arbejde med IT og teamwork. Jeg er en hurtig starter, der trives med komplekse problemstillinger.
+    </p>
+
+    <h4 class="mini-header">Min rejse ind i data</h4>
+    <p class="summary-text">
+        Min vej til Machine Learning startede et lidt utraditionelt sted – nemlig på danskstudiet. Jeg havde en gymnasielærer, der var så fænomenal til at formidle faget, at jeg blev helt solgt. Men undervejs i mit første semester gik det op for mig, at hvis jeg selv skulle undervise i det en dag, ville barren være sat tårnhøjt, og jeg blev usikker på, om jeg kunne vække den samme gejst hos andre.
+
+Derfor valgte jeg at lytte til min mavefornemmelse og skiftede til Machine Learning og Datavidenskab. Det kan virke som et voldsomt spring fra litteraturanalyse til algoritmer, men matematikken har altid ligget naturligt til mig. For mig handler begge fag i virkeligheden om det samme: At finde mønstre, forstå strukturer og formidle komplekse sammenhænge – nu gør jeg det bare med data i stedet for ord.
+    </p>
+
+    <h4 class="mini-header">Erfaring der rækker ud over skærmen</h4>
+    <p class="summary-text">
+        Selvom jeg i dag bruger det meste af min tid på algoritmer, har jeg en solid baggrund fra servicebranchen, som har givet mig mere end bare evnen til at lave en god kop kaffe. Som Bar Manager og oplæringsansvarlig hos Café Razz lærte jeg hurtigt at holde hovedet koldt, når presset er højest og køen er længst.
+
+Det har givet mig en praktisk forståelse for drift, logistik og ikke mindst menneskeligt samarbejde. I tech-verdenen betyder det, at jeg er vant til at tage ansvar for mine opgaver, kommunikere klart med mine kolleger og forstå, at de systemer vi bygger, i sidste ende skal fungere for rigtige mennesker. Jeg tager den samme arbejdsmoral og struktur med mig ind i min programmering, som jeg brugte til at styre en travl bar."
+    </p>
+
+    <h4 class="mini-header">Hvad jeg nørder med i min fritid</h4>
+    <p class="summary-text">
+        Når jeg lukker bøgerne på KU, slipper jeg sjældent tasterne helt. Jeg bruger en del af min fritid på egne programmeringsprojekter, hvor jeg får lov til at eksperimentere med nye teknologier og bygge de løsninger, jeg lige går og får idéer til. Det er her, jeg for alvor får lov til at lege med teorien fra studiet og se den blive til noget praktisk, der virker.
+
+Men det hele handler selvfølgelig ikke om kode. Jeg bor i København med min kæreste gennem seks år, og fritiden bliver i høj grad også brugt sammen med hende. Og så er der ikke meget, der slår at koble helt af med gutterne fra Jylland over en omgang Xbox og en kold øl, eller se en god håndboldkamp sammen med en kammerat. Det er den perfekte måde at få ladet batterierne op til en ny uge med data og algoritmer.
+    </p>
+</section>

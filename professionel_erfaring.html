@@ -37,30 +37,25 @@
             </div>
         </section>
 
-        <section class="full-width">
-             <h3 class="sub-header" style="font-size: 1.5rem; border-bottom: 2px solid #eee; padding-bottom: 10px;">
-                Professionel erfaring
-            </h3>
 
-            <p class="summary-text">
-                Her kan du skrive en kort intro til din erhvervserfaring, eller bare lade fagene tale for sig selv.
-            </p>
 
             <br>
 
-            <div class="accordion-container">
-                
                 <div class="accordion-item">
-                    <div class="accordion-header" style="cursor: default; background-color: #f4f6f8;">
-                        <span style="color: #335372; font-weight: bold;">Bar Manager, Café Razz (Kolding)</span>
-                    </div>
+                    <button class="accordion-header active" onclick="toggleAccordion(this)">
+                        <span>
+                            <i class="fas fa-glass-martini-alt" style="margin-right: 10px;"></i>
+                            Bar Manager, Café Razz (Kolding)
+                        </span>
+                        <i class="fas fa-chevron-down" style="transform: rotate(180deg); transition: transform 0.3s;"></i>
+                    </button>
                     
-                    <div class="accordion-content" style="max-height: none;">
+                    <div class="accordion-content" style="max-height: 1000px;">
                         <div class="inner-padding">
                             <p class="date" style="margin-bottom: 10px;">Maj 2022 - Juli 2023</p>
                             <p>Som Bar Manager havde jeg ansvar for drift, IT og oplæring. Mine primære ansvarsområder var:</p>
                             <br>
-                            <ul class="simple-list">
+                            <ul class="tool-list">
                                 <li><strong>IT-System:</strong> Ansvarlig for betjening af IT-systemer, herunder opsætning af priser, tjener-id'er og administration af styresystemer med fokus på at sikre nøjagtighed og effektiv drift.</li>
                                 <li><strong>Forsyningskæde og lagerstyring:</strong> Ansvarlig for indkøb, bestilling og organisering af varer for at sikre effektiv forsyningskæde og lagerstyring.</li>
                                 <li><strong>Oplæringsansvarlig:</strong> Oplæring af nye tjenere med fokus på at sikre kundeservice, produktkendskab og overholdelse af virksomhedens standarder.</li>
@@ -70,15 +65,20 @@
                 </div>
 
                 <div class="accordion-item">
-                    <div class="accordion-header" style="cursor: default; background-color: #f4f6f8;">
-                        <span style="color: #335372; font-weight: bold;">Reservetjener, Hotel Koldingfjord</span>
-                    </div>
-                    <div class="accordion-content" style="max-height: none;">
+                    <button class="accordion-header active" onclick="toggleAccordion(this)">
+                            <span>
+                                <i class="fas fa-concierge-bell" style="margin-right: 10px;"></i>
+                                Reservetjener, Hotel Koldingfjord
+                            </span>
+                        <i class="fas fa-chevron-down" style="transform: rotate(180deg); transition: transform 0.3s;"></i>
+                    </button>
+                    
+                    <div class="accordion-content" style="max-height: 1000px;">
                         <div class="inner-padding">
                             <p class="date" style="margin-bottom: 10px;">August 2021 - Februar 2022</p>
                             <p>Arbejdede som reservetjener ved større selskaber og arrangementer.</p>
                             <br>
-                            <ul class="simple-list">
+                            <ul class="tool-list">
                                 <li>Servicering af gæster ved bryllupper og konferencer.</li>
                                 <li>Samarbejde i større teams for at sikre høj servicekvalitet.</li>
                             </ul>
@@ -86,32 +86,51 @@
                     </div>
                 </div>
 
-                <div class="accordion-item" style="border-bottom: none;"> <div class="accordion-header" style="cursor: default; background-color: #f4f6f8;">
-                        <span style="color: #335372; font-weight: bold;">Poder, Carelink (Kolding)</span>
-                    </div>
-                    <div class="accordion-content" style="max-height: none;">
+                <div class="accordion-item">
+                    <button class="accordion-header active" onclick="toggleAccordion(this)">
+                        <span>
+                            <i class="fas fa-briefcase-medical" style="margin-right: 10px;"></i>
+                            Poder, Carelink (Kolding)
+                        </span>
+                        <i class="fas fa-chevron-down" style="transform: rotate(180deg); transition: transform 0.3s;"></i>
+                    </button>
+                    
+                    <div class="accordion-content" style="max-height: 1000px;">
                         <div class="inner-padding">
                             <p class="date" style="margin-bottom: 10px;">Januar 2022 - Januar 2022</p>
                             <p>Arbejdede som poder under COVID-19 pandemien.</p>
                             <br>
-                            <ul class="simple-list">
+                            <ul class="tool-list">
                                 <li>Udførelse af podninger med fokus på hygiejne og sikkerhed.</li>
                                 <li>Kundebehandling og registrering i IT-systemer.</li>
                             </ul>
-                        </div>
-                    </div>
-                </div>
+                        </div> </div> </div> </div> </section> <footer class="bottom-bar">
+            <div><i class="fas fa-phone"></i> +45 51 33 43 61</div>
+            <div><i class="fas fa-envelope"></i> simon-hvidtfeldt@hotmail.com</div>
+            <div><i class="fas fa-home"></i> Toftegårdsalle 40, 3.th</div>
+        </footer>
 
-            </div>
-            </section>
+    </div> <script>
+    function toggleAccordion(element) {
+        const content = element.nextElementSibling;
+        element.classList.toggle("active");
 
-    </div> <footer class="bottom-bar">
-        <div><i class="fas fa-phone"></i> +45 51 33 43 61</div>
-        <div><i class="fas fa-envelope"></i> simon-hvidtfeldt@hotmail.com</div>
-        <div><i class="fas fa-home"></i> Toftegårdsalle 40, 3.th</div>
-    </footer>
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+        }
 
-</div>
-
+        const icon = element.querySelector('i');
+        if (icon) {
+            icon.style.transition = "transform 0.3s ease";
+            if (element.classList.contains("active")) {
+                icon.style.transform = "rotate(180deg)";
+            } else {
+                icon.style.transform = "rotate(0deg)";
+            }
+        }
+    }
+    </script>
 </body>
 </html>

@@ -39,146 +39,206 @@
 
         <section class="full-width">
             
-            <h3 class="sub-header" style="font-size: 1.5rem; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 20px;">
-                Værktøjer & Kompetencer
-            </h3>
             
-            <p class="summary-text">
-                Herunder finder du en oversigt over de tekniske værktøjer og softwareprogrammer, jeg anvender på mit stuide, og har andre programmer jeg har kendskab til.
-            </p>
-            <br>
-
-            <div class="accordion-container">
 
                 <div class="accordion-item">
-                    <button class="accordion-header"> 
-                        <span><i class="fas fa-code" style="margin-right: 10px;"></i> Programmering & Databaser</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="accordion-content">
-                        <br>
-                        <div class="accordion-container inner-accordion">
+                    <button class="accordion-header active" onclick="toggleAccordion(this)">
+                       <span><i class="fas fa-code" style="margin-right: 10px;"></i> Programmering & Databaser</span>
+                        <i class="fas fa-chevron-down"></i></button>
+                        <div class="accordion-content" style="max-height: none;">
+                            <div class="inner-padding" style="background-color: #fff; padding: 20px;">
+                                <div class="accordion-container" style="border: none; display: flex; flex-direction: column; gap: 10px;">
                             
-                            <div class="accordion-item">
-                                <button class="accordion-header">
-                                    <span>Visual Studio Code</span>
-                                    <i class="fas fa-chevron-down"></i>
-                                </button>
-                                <div class="accordion-content">
-                                    <div class="inner-padding">
-                                        <p><br>Udvikling og strukturering af kode i flere programmeringssprog. Vores primære sprog på uddannelsen er Python, men vi har også 
-                                        arbejdet med F# og C. Personligt, har jeg bedst kendskab til Python, da det er det mest oplagte sprog til behandling af data, og Machine Learning.  </p><br>
+                                <div class="accordion-item">
+                                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                                        <span>Visual Studio Code</span>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <div class="inner-padding">
+                                            <p>Min primære editor til programmering. Jeg har mest erfaring i Python, men gennem uddannelsen har vi også stiftet kendskab til F# og C.</p>
+                                            
+                                            <div style="margin-top: 20px;">
+                                                <strong style="display: block; padding-bottom: 20px; font-size: 0.9em; color: #335372;">
+                                                    Anvendte sprog:
+                                                </strong>
+                                                
+                                                <span class="skill-tag">Python</span>
+                                                <span class="skill-tag">F#</span>
+                                                <span class="skill-tag">C</span>
+                                            </div>
+
+                                            <p style="margin-top: 10px;">
+                                                Som nævnt er Python mit primære sprog, og jeg har brugt det i en lang række projekter, både i og uden for studiet. Jeg har erfaring med biblioteker som NumPy, Pandas, Matplotlib, Scikit-learn og TensorFlow. Jeg har også arbejdet med F# og C i forbindelse med specifikke kurser, hvor vi har brugt dem til at udforske forskellige paradigmer inden for programmering.
+                                            </p>
+
+                                            <div style="margin-top: 20px; line-height: 2.2;"> <strong style="display: block; margin-bottom: 10px; font-size: 0.9em; color: #335372;">Relaterede fag:</strong>
+                                                <span class="skill-tag">Programmering og problemløsning</span>
+                                                <span class="skill-tag">Grundlæggende datascience</span>
+                                                <span class="skill-tag">Databases and Information Systems</span>
+                                                <span class="skill-tag">Machine Learning A</span>
+                                                <span class="skill-tag">Deep Learning</span>
+                                                <span class="skill-tag">High Performance programmering og systemer</span>
+                                                <span class="skill-tag">Models for Complex Systems</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                                        <span>pgAdmin (PostgreSQL)</span>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <div class="inner-padding">
+                                            <p>Mit primære værktøj til administration og udvikling af relationelle databaser. Jeg har erfaring med at designe database-skemaer, normalisering og optimering af forespørgsler gennem SQL.</p>
+                                            
+                                            <div style="margin-top: 20px;">
+                                                <strong style="display: block; padding-bottom: 20px; font-size: 0.9em; color: #335372;">
+                                                    Anvendte sprog:
+                                                </strong>
+                                                
+                                                <span class="skill-tag">PostgreSQL</span>
+                                                <span class="skill-tag">SQL</span>
+                                            </div>
+
+                                            <p style="margin-top: 10px;">
+                                                Jeg har primært anvendt pgAdmin i forbindelse med kurset "Databases and Information Systems", hvor jeg var med til at udvikle en webapplikation til lagerstyring af fødevarer. Projektet indebar design af en kompleks database, der kunne matche brugernes tilgængelige ingredienser med en opskriftsdatabase for at foreslå måltider. Her arbejdede jeg indgående med relationsmodeller og SQL-logik til at identificere manglende ingredienser på tværs af tusindvis af datapunkter.
+                                            </p>
+
+                                            <div style="margin-top: 20px; line-height: 2.2;"> <strong style="display: block; margin-bottom: 10px; font-size: 0.9em; color: #335372;">Relaterede fag:</strong>
+                                                <span class="skill-tag">Databases and Information Systems</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="accordion-item">
-                                <button class="accordion-header">
-                                    <span>pgAdmin (PostgreSQL)</span>
-                                    <i class="fas fa-chevron-down"></i>
-                                </button>
-                                <div class="accordion-content">
-                                    <div class="inner-padding">
-                                        <p><br>Oprettelse, forespørgsel og administration af relationelle databaser. Vi har kun arbejdet med dette værktøj i et enkelt fag. Det har dog 
-                                        været utroligt lærerigt. I faget Databases and Information Systems lærte vi blandt andet at administrere databaser igennem det selvvalgte projekt vi Udarbejdelse
-                                    i løbet af faget. </p><br>
-                                    
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
-                        <br>
                     </div>
                 </div>
 
                 <div class="accordion-item">
-                    <button class="accordion-header"> 
+                    <button class="accordion-header active" onclick="toggleAccordion(this)">
                         <span><i class="fas fa-chart-bar" style="margin-right: 10px;"></i> Data Science & Statistik</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="accordion-content">
-                        <br>
-                        <div class="accordion-container inner-accordion">
+                        <i class="fas fa-chevron-down"></i></button>
+                        <div class="accordion-content" style="max-height: none;">
+                            <div class="inner-padding" style="background-color: #fff; padding: 20px;">
+                                <div class="accordion-container" style="border: none; display: flex; flex-direction: column; gap: 10px;">
                             
-                            <div class="accordion-item">
-                                <button class="accordion-header">
-                                    <span>R - For statistical computing</span>
-                                    <i class="fas fa-chevron-down"></i>
-                                </button>
-                                <div class="accordion-content">
-                                    <div class="inner-padding">
-                                        <p><br>Statistisk analyse, datavisualisering og hypotesetest.</p><br>
+                                <div class="accordion-item">
+                                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                                        <span>R - For Statistical Computing</span>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <div class="inner-padding">
+                                           <p>Mit primære miljø til avanceret statistisk analyse og visualisering. Jeg anvender R til at bearbejde komplekse datasæt, udføre regressionsanalyser og præsentere resultater gennem præcise grafiske fremstillinger.</p>
+                                            
+                                            <div style="margin-top: 20px;">
+                                                <strong style="display: block; padding-bottom: 20px; font-size: 0.9em; color: #335372;">
+                                                    Anvendte sprog:
+                                                </strong>
+                                                
+                                                <span class="skill-tag">R</span>
+                                                <span class="skill-tag">Python</span>
+                                            </div>
+
+                                            <p style="margin-top: 10px;">
+                                                Gennem faget "Sandsynlighedsregning og Statistik" har jeg opnået en solid erfaring med R, særligt inden for statistisk modellering og inferens. Jeg har arbejdet indgående med biblioteker som <strong style="color: #335372;">ggplot2</strong> til visualisering og <strong style="color: #335372;">tidyverse</strong> til datamanipulation. Ved at kombinere R med mine færdigheder i Python kan jeg vælge det mest effektive værktøj til den specifikke analytiske opgave, uanset om det gælder dyb statistisk testning eller Machine Learning.
+                                            </p>
+
+                                            <div style="margin-top: 20px; line-height: 2.2;"> <strong style="display: block; margin-bottom: 10px; font-size: 0.9em; color: #335372;">Relaterede fag:</strong>
+                                                <span class="skill-tag">Sandsynlighedsregning og Statistik</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="accordion-item">
-                                <button class="accordion-header">
-                                    <span>Excel</span>
-                                    <i class="fas fa-chevron-down"></i>
-                                </button>
-                                <div class="accordion-content">
-                                    <div class="inner-padding">
-                                        <p><br>Databehandling, beregninger og visualisering med formler og diagrammer.</p><br>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
-                        <br>
                     </div>
                 </div>
 
                 <div class="accordion-item">
-                    <button class="accordion-header"> 
-                        <span><i class="fas fa-file-alt" style="margin-right: 10px;"></i> Dokumentation & Formidling</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="accordion-content">
-                        <br>
-                        <div class="accordion-container inner-accordion">
+                    <button class="accordion-header active" onclick="toggleAccordion(this)">
+                        <span>
+                            <i class="fas fa-file-alt" style="margin-right: 10px;"></i> 
+                            Dokumentation & Formidling
+                        </span>
+                        <i class="fas fa-chevron-down"></i></button>
+                        <div class="accordion-content" style="max-height: none;">
+                            <div class="inner-padding" style="background-color: #fff; padding: 20px;">
+                                <div class="accordion-container" style="border: none; display: flex; flex-direction: column; gap: 10px;">
                             
-                            <div class="accordion-item">
-                                <button class="accordion-header">
-                                    <span>Overleaf (LaTeX)</span>
-                                    <i class="fas fa-chevron-down"></i>
-                                </button>
-                                <div class="accordion-content">
-                                    <div class="inner-padding">
-                                        <p><br>Udarbejdelse af tekniske og akademiske dokumenter med præcis formatering.</p><br>
+                                <div class="accordion-item">
+                                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                                        <span>Overleaf (Latex)</span>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <div class="inner-padding">
+                                            <p>Mit primære værktøj til teknisk og videnskabelig dokumentation. Jeg anvender LaTeX til alle formelle afleveringer og rapporter, hvor præcision i opsætningen er afgørende.</p>
+                                            
+                                            <div style="margin-top: 20px;">
+                                                <strong style="display: block; padding-bottom: 20px; font-size: 0.9em; color: #335372;">
+                                                   Anvendte sprog:
+                                                </strong>
+                                                
+                                                <span class="skill-tag">Latex</span>
+                                            </div>
+
+                                            <p style="margin-top: 10px;">
+                                                Gennem min studietid er LaTeX blevet min standard til alt skriftligt arbejde. Jeg har stor erfaring med at opsætte komplekse matematiske formler, tabeller og krydsreferencer, som er nødvendige i fag som <strong style="color: #335372;">Lineær Algebra</strong> og <strong style="color: #335372;">Deep Learning</strong>. Brugen af Overleaf sikrer, at mine tekniske rapporter altid lever op til den videnskabelige standard for formatering og struktur, hvilket er essentielt i et felt som datalogi.
+                                            </p>
+
+                                            <div style="margin-top: 20px; line-height: 2.2;"> <strong style="display: block; margin-bottom: 10px; font-size: 0.9em; color: #335372;">Relaterede fag:</strong>
+                                                <span class="skill-tag">Grundlæggende data science</span>
+                                                <span class="skill-tag">Introduktion til diskret matematik og algoritmer</span>
+                                                <span class="skill-tag">Databases and Information Systems</span>
+                                                <span class="skill-tag">Lineær algebra i datalogi</span>
+                                                <span class="skill-tag">Machine Learning A</span>
+                                                <span class="skill-tag">Deep Learning</span>
+                                                <span class="skill-tag">High Performance programmering og systemer</span>
+                                                <span class="skill-tag">Randomiserede algortimer til dataanalyse</span>
+                                                <span class="skill-tag">Datalogiens videnskabsteori</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                                        <span>Microsoft Office</span>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <div class="inner-padding">
+                                            <p>Da jeg har arbejdet indgående med Office-pakken gennem hele min skolegang og gymnasietid, har jeg opnået en høj grad af fortrolighed med programmerne. Selvom min primære dokumentation på universitetet foregår i LaTeX, bruger jeg Word til hurtig tekstbehandling og korrektur, mens PowerPoint er mit foretrukne værktøj til visuel formidling. I Excel har jeg kendskab til databehandling og opstilling af budgetter. Min baggrund i dansk sikrer desuden, at jeg altid har et skarpt øje for den sproglige præcision i mine præsentationer.</p>
+                                            
+                                            <div style="margin-top: 20px;">
+                                                <strong style="display: block; padding-bottom: 20px; font-size: 0.9em; color: #335372;">
+                                                    Programmer:
+                                                </strong>
+                                                
+                                                <span class="skill-tag">Word</span>
+                                                <span class="skill-tag">Excel</span>
+                                                <span class="skill-tag">Powerpoint</span>
+                                                <span class="skill-tag">Teams</span>
+                                            </div>
+
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="accordion-item">
-                                <button class="accordion-header">
-                                    <span>PowerPoint</span>
-                                    <i class="fas fa-chevron-down"></i>
-                                </button>
-                                <div class="accordion-content">
-                                    <div class="inner-padding">
-                                        <p><br>Formidling af tekniske emner og analyser i præsentationsformat.</p><br>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
-                        <br>
                     </div>
                 </div>
-
             </div>
-            </section>
-
-    </div>
     
     <footer class="bottom-bar">
         <div><i class="fas fa-phone"></i> +45 51 33 43 61</div>
         <div><i class="fas fa-envelope"></i> simon-hvidtfeldt@hotmail.com</div>
         <div><i class="fas fa-home"></i> Toftegårdsalle 40, 3.th</div>
     </footer>
-
 </div>
 
 <script>

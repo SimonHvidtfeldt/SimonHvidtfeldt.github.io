@@ -42,14 +42,91 @@
 
 </section>
 
-        <section class="full-width">
-            
-            <h3 class="sub-header" style="font-size: 1.5rem; border-bottom: 2px solid #eee; padding-bottom: 10px;">
-                Frivillighed
-            </h3>
-            
-            <p class="summary-text">
-                Tekst kommer senere.
-            </p>
+                <div class="accordion-item">
+                    <button class="accordion-header active" onclick="toggleAccordion(this)">
+                        <span>
+                            <i class="fas fa-hands-helping" style="margin-right: 10px;"></i>
+                            Frivillighed
+                        </span>
+                        <i class="fas fa-chevron-down"></i></button>
+                        <div class="accordion-content" style="max-height: none;">
+                            <div class="inner-padding" style="background-color: #fff; padding: 20px;">
+                                <div class="accordion-container" style="border: none; display: flex; flex-direction: column; gap: 10px;">
+                            
+                                <div class="accordion-item">
+                                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                                        <span>Håndboldtræner ved NBSIF, Kolding</span>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <div class="inner-padding">
+                                            <p>I min rolle som træner for de yngste årgange (U6 & U8) havde jeg ansvaret for at skabe en tryg og lærerig ramme gennem sporten. Mine primære ansvarsområder inkluderede:</p>
+        
+                                            <ul class="tool-list" style="margin-top: 10px;">
+                                                <li><strong>Planlægning og strukturering:</strong> Udvikling af ugentlige træningsprogrammer med fokus på motorik, boldleg og tekniske øvelser tilpasset børnenes udviklingstrin.</li>
+                                                <li><strong>Dommergerning:</strong> Ansvarlig for afvikling af kampe, hvilket krævede hurtig beslutningstagen, konflikthåndtering og evnen til at formidle regler på en letforståelig måde.</li>
+                                                <li><strong>Ledelse og motivation:</strong> Formidling af holdånd og gejst, samt koordination med forældre og øvrige trænere.</li>
+                                            </ul>
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                                        <span>Bloddonor</span>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <div class="inner-padding">
+                                            <p>Der er ikke så meget mere at sige. Jeg donoerer blod, når de skriver at de har brug for det.</p>
+                                            
 
-            <br>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+    <footer class="bottom-bar">
+        <div><i class="fas fa-phone"></i> +45 51 33 43 61</div>
+        <div><i class="fas fa-envelope"></i> simon-hvidtfeldt@hotmail.com</div>
+        <div><i class="fas fa-home"></i> Toftegårdsalle 40, 3.th</div>
+    </footer>
+</div>
+
+<script>
+    var acc = document.getElementsByClassName("accordion-header");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+
+            // Håndtering af indlejrede lister (Så den ydre boks udvider sig)
+            var parentContent = this.parentElement.closest('.accordion-content');
+            if (parentContent && parentContent.style.maxHeight) {
+                 if (this.classList.contains("active")) {
+                    parentContent.style.maxHeight = (parentContent.scrollHeight + panel.scrollHeight) + "px";
+                } else {
+                    // Lille fix for at sikre flydende animation når man lukker
+                    parentContent.style.maxHeight = parentContent.scrollHeight + "px";
+                }
+            }
+        });
+    }
+</script>
+
+</body>
+</html>

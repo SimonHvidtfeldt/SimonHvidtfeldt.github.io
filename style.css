@@ -34,26 +34,32 @@ body {
     height: 220px;
     position: relative;
     color: white;
-}
-
-.header-text {
-    position: absolute;
-    right: 50px;
-    top: 50px;
-    text-align: right;
+    display: flex; /* Tilføj flex her */
+    justify-content: flex-end; /* Skubber indholdet (navnet) mod højre */
+    align-items: center; /* Centrerer navnet vertikalt i den blå boks */
+    padding-right: 10%; /* Juster denne for at styre afstanden til højre kant */
 }
 
 .header-text h1 {
-    font-size: 4rem;
-    font-weight: bold;
-    line-height: 1;
-    margin-right: 70px;
+    font-size: 4rem;    /* Gør 'Simon' rigtig stort */
+    font-weight: bold;  /* Gør det ekstra tydeligt */
+    margin: 0;
+    line-height: 0.9;   /* Trækker efternavnene lidt tættere op */
 }
 
 .header-text h2 {
-    font-size: 3rem;
+    font-size: 3rem;  /* Gør efternavnene mindre end fornavnet */
     font-weight: normal;
-    margin-top: 5px;
+    margin: 0;
+    line-height: 1.1;
+}
+
+/* Sørg for at blokken stadig flugter til venstre */
+.header-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    text-align: left;
 }
 
 /* Profilbillede cirkel */
@@ -181,6 +187,7 @@ p, li {
     color: #666;
     margin-bottom: 5px;
     font-size: 0.85rem;
+    margin-left: 16px;
 }
 
 /* Gælder for lister under job og kompetencer */
@@ -199,19 +206,6 @@ p, li {
 /* Højre kolonne elementer */
 .edu-entry p {
     margin-bottom: 10px;
-}
-
-/* Specifikt for Kompetence-listen */
-.simple-list {
-    list-style-position: outside;
-    margin-left: 18px; 
-    padding-left: 0;
-    margin-top: 5px;
-}
-
-.simple-list li {
-    margin-bottom: 10px; 
-    line-height: 1.6;    
 }
 
 /* Progress bars for sprog */
@@ -289,20 +283,25 @@ p, li {
 /* --- STYLING TIL SIDE 2 --- */
 
 /* Underoverskrifter */
+/* Dette gælder for alle andre sub-headers (Studieprojekter osv.) */
 .sub-header {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: bold;
-    margin-top: 10px;
+    color: rgb(66, 66, 66);
+    margin-top: 20px;
     margin-bottom: 10px;
-    color: #333;
+    border-bottom: none; /* Her fjerner vi stregen globalt */
+    text-decoration: underline;
 }
 
 /* Titel på projekterne */
 .project-title {
-    text-decoration: underline;
     margin-bottom: 5px;
     font-size: 0.95rem;
-    color: #333;
+    color: rgb(50, 50, 50);
+    font-weight: bold;
+    margin-left: 5px;
+
 }
 
 .project-entry {
@@ -338,17 +337,21 @@ p, li {
 /* --- ACCORDION STYLING --- */
 
 .accordion-container {
-    border: 1px solid #eee;
-    border-radius: 8px;
-    overflow: hidden; /* Sikrer at hjørnerne forbliver runde */
+    border: none !important;    /* Fjerner den ramme der driller */
+    background: transparent;    /* Sikrer at der ikke er en baggrundsfarve der syner af en streg */
+    padding: 0;                 /* Fjerner indvendig luft der kan afsløre containeren */
+    margin: 0;
 }
 
 .accordion-item {
-    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden; /* Dette er vigtigt for at de blå hjørner ikke "stikker ud" */
+    border: none;
 }
 
 .accordion-item:last-child {
-    border-bottom: none; /* Fjerner streg under den sidste */
+    margin-bottom: 0;    /* Sørger for at der ikke er ekstra luft i bunden af containeren */
 }
 
 /* Selve knappen man trykker på */
@@ -389,14 +392,42 @@ p, li {
     border-top: 1px solid #eee; /* Lille streg mellem titel og indhold */
 }
 
-/* Pilen der drejer rundt */
-.accordion-header i {
+/* Kun selve pilen skal have lov at bevæge sig glat */
+.accordion-header .fa-chevron-down {
     transition: transform 0.3s ease;
 }
 
-.accordion-header.active i {
-    transform: rotate(180deg); /* Drejer pilen når den er åben */
+/* Det er KUN pilen, der må rotere 180 grader, når knappen er aktiv */
+.accordion-header.active .fa-chevron-down {
+    transform: rotate(180deg);
 }
+
+/* Vi sikrer os, at dit personlige ikon (bruger-cirklen) ALDRIG roterer */
+.accordion-header .fa-file-alt,
+.accordion-header .fa-chart-bar,
+.accordion-header .fa-code,
+.accordion-header .fa-hands-helping,
+.accordion-header .fa-user-circle,
+.accordion-header .fa-project-diagram,
+.accordion-header .fa-laptop-code,
+.accordion-header .fa-chart-line,
+.accordion-header .fa-bullhorn,
+.accordion-header .fa-comment-dots,
+.accordion-header .fa-globe-europe,
+.accordion-header .fa-language,
+.accordion-header .fa-book,
+.accordion-header .fa-cubes,
+.accordion-header .fa-layer-group,
+.accordion-header .fa-brain,
+.accordion-header .fa-glass-martini-alt,
+.accordion-header .fa-concierge-bell,
+.accordion-header .fa-briefcase-medical,
+.accordion-header .fa-microchip,
+.accordion-header .fa-users,
+.accordion-header .fa-route {
+    transform: none !important;
+}
+
 
 /* --- SKILL TAGS (Til kompetence-siden) --- */
 .skill-tag-container {
@@ -407,16 +438,18 @@ p, li {
 }
 
 .skill-tag {
-    background-color: #eef2f5; /* Meget lys blå/grå baggrund */
-    color: #335372;            /* Din mørkeblå temafarve */
-    padding: 8px 16px;
-    border-radius: 20px;       /* Gør dem runde */
-    font-size: 0.9rem;
-    font-weight: 600;
-    border: 1px solid #dce4ec;
-    transition: background-color 0.2s;
+    display: inline-block; /* Gør at de respekterer margin og padding */
+    background-color: #f0f4f8; /* Den lyse farve fra dit screenshot */
+    color: #335372;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-right: 8px;
+    margin-bottom: 10px; /* Dette skaber afstanden mellem rækkerne */
+    border: 1px solid #d1d9e0;
+    white-space: nowrap; /* Sikrer at teksten inde i et tag ikke knækker midt i det hele */
 }
-
 /* Containeren der holder styr på kolonnerne */
 .columns-container {
     display: flex;
@@ -464,26 +497,24 @@ p, li {
 
 /* --- Værktøjsliste Design --- */
 
-/* Selve listen */
 .tool-list {
-    list-style-type: disc; /* Sikrer at der er "prikker" (bullets) */
-    padding-left: 25px;    /* Plads til prikkerne til venstre */
-    margin-top: 25px;      /* Lidt luft over listen */
+    list-style-type: none; 
+    padding-left: 0;
+    margin-left: 5px;        /* Her ændrer vi til 0, så listen starter helt ude til venstre */
+    margin-top: 5px;       
 }
 
-/* Det enkelte punkt på listen */
 .tool-list li {
-    margin-bottom: 30px; /* Afstand ned til næste værktøj */
-    line-height: 1.5;    /* Gør teksten nemmere at læse */
-    color: #555;         /* Lidt lysere farve til beskrivelsesteksten */
+    position: relative;
+    margin-bottom: 10px;   
+    line-height: 1.6;      
+    padding-left: 18px;    /* Vi beholder denne, for teksten skal stadig rykke lidt ind, så den ikke ligger oven i trekanten */
 }
 
-/* Titlen på værktøjet (den fede tekst) */
-.tool-list li strong {
-    font-weight: 700;    /* Tyk skrift */
-    color: #222;         /* Helt mørk farve til titlen */
-    font-size: 1.05rem;  /* En anelse større end brødteksten */
-    /* Bemærk: <br> i HTML'en sørger for linjeskiftet efter dette element */
+.tool-list li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;               /* Nu flugter trekanten fuldstændig med kanten af teksten ovenover */
 }
 
 /* --- Accordion Design --- */
@@ -551,3 +582,135 @@ p, li {
     border-left: 4px solid #335372;
 }
 
+.job-titel {
+    text-decoration: underline;
+}
+
+/* Styling specifikt til listerne under dine jobs */
+.job-list {
+    list-style-type: none; 
+    padding-left: 0;
+    margin-left: 6px;      /* Husk at bruge det samme tal, som du fandt frem til før! */
+    margin-top: 5px;       
+}
+
+.job-list li {
+    position: relative;
+    margin-bottom: 10px;   
+    line-height: 1.6;      
+    padding-left: 18px;    
+}
+
+.job-list li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+}
+/* Bemærk: Vi tilføjer IKKE nogen regler for 'strong' eller 'p' her! */
+
+/* Denne streg rammer nu KUN "Om mig" hovedoverskriften */
+#about-me .sub-header_ {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(15, 15, 15);
+    padding-bottom: 8px;
+    border-bottom: 3px solid #333; 
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+/* Disse streger rammer nu KUN de små overskrifter inde i "Om mig" */
+#about-me .mini-header {
+    font-size: 1.1rem;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+    margin-top: 30px;
+    margin-bottom: 12px;
+}
+
+#about-me .mini-header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 3px;
+    width: 100%;
+    background-color: #333;
+}
+
+.skill-tag-a {
+    background-color: #335372;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+.course-tag-a {
+    background-color: #f0f4f8;
+    color: #335372;
+    border: 1px solid #335372;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+/* Styling af README boksen */
+#dis-readme {
+    background-color: #f6f8fa;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    padding: 24px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: #24292f;
+    text-align: left; /* Sikrer at teksten ikke er centreret */
+}
+
+/* Overskrifter i README */
+#dis-readme h1, #dis-readme h2, #dis-readme h3 {
+    border-bottom: 1px solid #d8dee4;
+    padding-bottom: 0.3em;
+    margin-top: 24px;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+/* Kode-blokke (bash koderne) */
+#dis-readme pre {
+    background-color: #afb8c133;
+    padding: 16px;
+    border-radius: 6px;
+    overflow: auto; /* Hvis koden er for lang */
+    font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+    font-size: 85%;
+}
+
+/* Inline kode (det der står inde i teksten) */
+#dis-readme code {
+    background-color: #afb8c133;
+    padding: 0.2em 0.4em;
+    border-radius: 6px;
+    font-family: monospace;
+}
+
+/* Lister i README */
+#dis-readme ul {
+    padding-left: 2em;
+    margin-bottom: 16px;
+}
+
+/* Links */
+#dis-readme a {
+    color: #0969da;
+    text-decoration: none;
+}
+
+#dis-readme a:hover {
+    text-decoration: underline;
+}

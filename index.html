@@ -11,11 +11,13 @@
 
 <div class="a4-page">
     
-    <header class="main-header">
-        <div class="header-text">
-            <h1>Simon</h1>
-            <h2>H. Hvidtfeldt</h2>
-        </div>
+        <header class="main-header">
+            <div class="header-text">
+                <h1>Simon</h1>
+                <h2>Høpfner</h2>
+                <h2>Hvidtfeldt</h2>
+            </div>
+        </header>
         
         <div class="profile-img-container">
             <img src="mig.jpg" alt="Simon Hvidtfeldt">
@@ -47,22 +49,22 @@
                 </div>
 
                 <div class="job-entry">
-                    <h3>Bar manager, Café Razz, Kolding</h3>
+                    <h3 class="job-titel">Bar manager, Café Razz, Kolding</h3>
                     <p class="date">Maj 2022 - juli 2023</p>
-                    <ul>
-                        <li><strong>IT-System:</strong> Ansvarlig for betjening af IT-systemer, herunder opsætning af priser, tjener-id'er og administration af styresystemer med fokus på at sikre nøjagtighed og effektiv drift.</li>
-                        <li><strong>Forsyningskæde og lagerstyring:</strong> Ansvarlig for indkøb, bestilling og organisering af varer for at sikre effektiv forsyningskæde og lagerstyring.</li>
-                        <li><strong>Oplæringsansvarlig:</strong> Oplæring af nye tjenere med fokus på at sikre kundeservice, produktkendskab og overholdelse af virksomhedens standarder.</li>
+                    <ul class="job-list">
+                        <li><strong>IT-System:</strong> Sikrede driften af kassesystemer gennem løbende konfiguration af priser og brugeradgang.</li>
+                        <li><strong>Forsyningskæde og lagerstyring:</strong> Håndterede indkøb og organisering af varer for at optimere den daglige forsyningskæde.</li>
+                        <li><strong>Oplæringsansvarlig:</strong> Trænede nye medarbejdere i kundeservice, produktkendskab og interne standarder.</li>
                     </ul>
                 </div>
 
                 <div class="job-entry">
-                    <h3>Reservetjener, Hotel Koldingfjord, Kolding</h3>
+                    <h3 class="job-titel">Reservetjener, Hotel Koldingfjord, Kolding</h3>
                     <p class="date">August 2021 - Februar 2022</p>
                 </div>
 
                 <div class="job-entry">
-                    <h3>Poder, Carelink, Kolding</h3>
+                    <h3 class="job-titel">Poder, Carelink, Kolding</h3>
                     <p class="date">Januar 2022 - Januar 2022</p>
                 </div>
             </div>
@@ -74,7 +76,7 @@
                 </div>
 
                 <div class="edu-entry">
-                    <ul class="simple-list">
+                    <ul class="tool-list">
                         <li>Igangværende bachelor i Machine Learning & datavidenskab, KU, Danmark | 2024 -</li>
                         <li>1. Semester i Dansk | KU, Danmark | 2023-2024</li>
                     </ul>
@@ -103,7 +105,7 @@
                     <a href="kompetencer.html" class="badge">Kompetencer</a>
                     <span class="line"></span>
                 </div>
-                <ul class="simple-list">
+                <ul class="tool-list">
                     <li>Sproganalyse, grammatisk korrekthed, tekstforståelse, skriftlig formidling.</li>
                     <li>Problemløsning og algoritmisk tænkning, Dataanalyse og statistisk inferens, Programmering, Databasedesign og informationshåndtering.</li>
                 </ul>
@@ -132,22 +134,19 @@
                 
                 <div class="project-entry">
                     <p class="project-title">Fake News Project</p>
-                    <ul class="simple-list">
+                    <ul class="tool-list">
                         <li>
-                            <strong>Formålet med dette projekt var at udvikle et system til at forudsige falske nyheder.</strong> Projektet brugte et datasæt med ægte og falske nyheder. Der blev lavet to modeller.
-                            <br><br>
-                            Den simple model (Logistic Regression Model) opnåede en præcision på 0.89.
-                            <br>
-                            Den avancerede (TF-IDF og SGDClassifier) opnåede en præcision på 0.87.
+                            Byggede modeller til detektion af falske nyheder. Sammenlignede TF-IDF/SGDClassifier med en simpel Logistic Regression, som opnåede den bedste præcision (89%).
+
                         </li>
                     </ul>
                 </div>
 
                 <div class="project-entry">
                     <p class="project-title">Dit køleskab - Din ret | En webapp</p>
-                    <ul class="simple-list">
+                    <ul class="tool-list">
                         <li>
-                            <strong>I dette projekt skulle vi designe en webapp, der administrer data.</strong> Appen anvender SQL til at finde opskrifter, hvor alle ingredienser er tilgængelige fra dit køleskab, samt opskrifter hvor kun få ingredienser mangler.
+                            Byggede en datadreven webapp, som via SQL-forespørgsler filtrerer og foreslår opskrifter ud fra dit køleskabs nuværende indhold.
                         </li>
                     </ul>
                 </div>
@@ -156,45 +155,50 @@
 
                 <div class="project-entry">
                     <p class="project-title">Baggrundsfjerner</p>
-                    <ul class="simple-list">
+                    <ul class="tool-list">
                         <li>
-                            <strong>Denne app, kan fjerne baggrunden på et billede.</strong> Årsagen til projektet var et behov for at fjerne baggrunden fra skærmbilleder af mine eksamensnoter, så min håndskrift kunne placeres over en ternet baggrund og ternene stadig være synlige.
+                            Udviklede et billedbehandlingsværktøj, der automatisk fjerner baggrunden på billeder og frilægger forgrunden.
                         </li>
                     </ul>
                 </div>
 
+                <div class="project-entry">
+                    <p class="project-title">Personlig hjemmeside</p>
+                    <ul class="tool-list">
+                        <li>
+                            Udviklede en interaktiv portefølje-hjemmeside, der fungerer som en dybdegående, digital udvidelse af mit CV.
+                        </li>
+                    </ul>
+                </div>
+
+
+
             </div> <div class="right-col" style="margin-top: 60px;">
                 
                 <div class="section-heading" style="margin-left: -20px;">
-                    <a href="tools.html" class="badge">Værktøjer</a>
+                    <a href="tools.html" class="badge">Kursuser / Værktøjer</a>
                     <span class="line"></span>
                 </div>
 
+                <h4 class="sub-header">Relevante kursuser:</h4>
+
                 <ul class="tool-list">
-                    <li>
-                        <strong>Visual Studio Code</strong>
-                        <p>Udvikling og strukturering af kode i flere programmeringssprog (Python & F#).</p>
-                    </li>
-                    <li>
-                        <strong>R - For statistical computing</strong>
-                        <p>Statistisk analyse, datavisualisering og hypotesetest.</p>
-                    </li>
-                    <li>
-                        <strong>Overleaf</strong>
-                        <p>Udarbejdelse af tekniske og akademiske dokumenter med præcis formatering.</p>
-                    </li>
-                    <li>
-                        <strong>pgAdmin (PostgreSQL)</strong>
-                        <p>Oprettelse, forespørgsel og administration af relationelle databaser.</p>
-                    </li>
-                    <li>
-                        <strong>Excel</strong>
-                        <p>Databehandling, beregninger og visualisering med formler og diagrammer.</p>
-                    </li>
-                    <li>
-                        <strong>Powerpoint</strong>
-                        <p>Formidling af tekniske emner og analyser i præsentationsformat.</p>
-                    </li>
+                <li>Deep Learning</li>
+                <li>Machine Learning A</li>
+                <li>Models for Complex Systems</li>
+                <li>High Performance programmering og systemer</li>
+                <li>Databases and Information Systems</li>
+                <li>Sandsynlighed og Statistik</li>
+                </ul>
+
+                <h4 class="sub-header">Værktøjer:</h4>
+
+                <ul class="tool-list">
+                <li>Visual Studio Code (Python, F#, C)</li>
+                <li>R - For Statistical Computing</li>
+                <li>Overleaf</li>
+                <li>pgAdmin (PostgreSQL)</li>
+                <li>Microsoft Office</li>
                 </ul>
 
                 <div class="section-heading" style="margin-left: -20px;">
@@ -205,13 +209,18 @@
                 <div class="job-entry">
                     <h3>Håndboldtræner ved NBSIF, Kolding</h3>
                     <p class="date">August 2016 - Juni 2017</p>
-                    <ul class="simple-list">
+                    <ul class="tool-list">
                         <li>U6 & U8: Planlægning af øvelser, der passer til alder og færdighedsniveau, med særligt fokus på leg med bold.</li>
                     </ul>
                 </div>
 
+                
+
+                
+
             </div> </div> <section class="full-width" style="margin-top: -50px;">
     
+<section class="full-width" style="margin-top: 0px;">
     <div class="section-heading from-left">
         <a href="fritid.html" class="badge">I min fritid | personligt</a>
         <span class="line"></span>

@@ -39,15 +39,6 @@
 
         <section class="full-width">
             
-            <h3 class="sub-header" style="font-size: 1.5rem; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 20px;">
-                Uddannelse
-            </h3>
-            
-            <p class="summary-text">
-                Nedenfor er der et overblik over min uddannelse. Du kan blandt andet se hvilke fag jeg har haft, og hvilke kompetancer jeg har fået ud af dem.
-            </p>
-
-            <br>
 
             <h4 class="sub-header" style="color: #335372; margin-top: 20px;">Universitetsuddannelse</h4>
 
@@ -58,13 +49,15 @@
                 <div class="accordion-container" style="margin-top: 15px;">
                     
                     <div class="accordion-item">
-                        <button class="accordion-header"> 
-    <span>1. Studieår: Fundamentet</span>
-    <i class="fas fa-chevron-down"></i>
-</button>
-                        <div class="accordion-content">
-                            <div class="inner-padding" style="background-color: #fff;">
-                                <div class="accordion-container" style="border: none;">
+                        <button class="accordion-header active" onclick="toggleAccordion(this)">
+    <span>
+        <i class="fas fa-cubes" style="margin-right: 10px;"></i>
+        1. Studieår: Fundamentet
+    </span>
+    <i class="fas fa-chevron-down"></i> </button>
+                        <div class="accordion-content" style="max-height: none;">
+                            <div class="inner-padding" style="background-color: #fff; padding: 20px;">
+                                <div class="accordion-container" style="border: none; display: flex; flex-direction: column; gap: 10px;">
                                     
                                     <div class="accordion-item">
                                         <button class="accordion-header">
@@ -430,13 +423,15 @@
                     </div>
 
                     <div class="accordion-item">
-                        <button class="accordion-header">
-    <span>2. Studieår: Fordybelse</span>
-    <i class="fas fa-chevron-down"></i>
-</button>
-                        <div class="accordion-content">
-                            <div class="inner-padding" style="background-color: #fff;">
-                                <div class="accordion-container" style="border: none;">
+                        <button class="accordion-header active" onclick="toggleAccordion(this)">
+<span>
+        <i class="fas fa-layer-group" style="margin-right: 10px;"></i>
+        2. Studieår: Fordybelse
+    </span>
+    <i class="fas fa-chevron-up"></i> </button>
+                        <div class="accordion-content" style="max-height: none;">
+                            <div class="inner-padding" style="background-color: #fff; padding: 20px;">
+                                <div class="accordion-container" style="border: none; display: flex; flex-direction: column; gap: 10px;">
 
                                    <div class="accordion-item">
     <button class="accordion-header">
@@ -861,13 +856,15 @@
                     </div>
 
 <div class="accordion-item">
-    <button class="accordion-header">
-    <span>3. Studieår: Specialisering & Projekt</span>
-    <i class="fas fa-chevron-down"></i>
-</button>
-    <div class="accordion-content">
-        <div class="inner-padding" style="background-color: #fff;">
-            <div class="accordion-container" style="border: none;">
+    <button class="accordion-header active" onclick="toggleAccordion(this)">
+<span>
+        <i class="fas fa-brain" style="margin-right: 10px;"></i>
+        3. Studieår: Specialisering & Projekt
+    </span>
+    <i class="fas fa-chevron-down"></i></button>
+    <div class="accordion-content" style="max-height: none;">
+        <div class="inner-padding" style="background-color: #fff; padding: 20px;">
+            <div class="accordion-container" style="border: none; display: flex; flex-direction: column; gap: 10px;">
 
                 <div class="accordion-item">
                     <button class="accordion-header">
@@ -968,11 +965,14 @@
                 
                 <div class="accordion-container" style="margin-top: 15px;">
                     <div class="accordion-item">
-                        <button class="accordion-header">
-                            <span>Retning</span> <i class="fas fa-chevron-down"></i>
-                        </button>
-                        <div class="accordion-content">
-                            <div class="inner-padding">
+                        <button class="accordion-header active" onclick="toggleAccordion(this)">
+                            <span>
+                                <i class="fas fa-book" style="margin-right: 10px;"></i>
+                                Retning
+                            </span> 
+                                <i class="fas fa-chevron-down"></i></button>
+                        <div class="accordion-content" style="max-height: none;">
+                            <div class="inner-padding" style="background-color: #fff; padding: 20px;">
                                 <p><strong>Studieretning:</strong> MatSamf - Matematik A og Samfundsfag A.</p>
                                 
                                 <div class="columns-container">
