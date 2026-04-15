@@ -4,52 +4,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Velkommen | Welcome</title>
+    
     <link rel="stylesheet" href="style.css">
+    
     <style>
-        /* En simpel styling til din valgside */
-        .welcome-container {
+        /* Ekstra styling specifikt til denne valgside for at centrere og 
+           organisere indholdet uden at påvirke dit CV-design */
+        
+        .splash-content {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            min-height: 500px; /* Sørger for kassen har en god højde efter headeren */
             text-align: center;
-            font-family: sans-serif;
+            padding: 40px;
+            margin-top: 60px;
         }
-        .info-section {
-            margin-bottom: 30px;
-            max-width: 500px;
-            padding: 20px;
+
+        .splash-text {
+            max-width: 600px;
+            margin-bottom: 40px;
         }
+
+        .splash-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
         .language-buttons {
             display: flex;
-            gap: 20px;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap; /* Knapperne hopper ned på mobil */
         }
-        .btn {
-            padding: 15px 30px;
-            text-decoration: none;
-            background-color: #333;
-            color: white;
-            border-radius: 8px;
+
+        /* Styling til de store sprog-knapper, der genbruger hover-effekten fra dit CV */
+        .lang-btn {
+            background-color: #5fa2ce; /* Din lyseblå */
+            color: rgb(0, 40, 90) !important;
+            padding: 15px 40px;
+            border-radius: 30px;
             font-weight: bold;
+            font-size: 1.2rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s ease, background-color 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-        .btn:hover {
-            background-color: #555;
+
+        .lang-btn:hover {
+            transform: scale(1.05); /* Puster den op med 5% */
+            background-color: #4a90e2; 
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
 
-    <div class="welcome-container">
-        <div class="info-section">
-            <h1>Velkommen / Welcome</h1>
-            <p>Her kan du skrive den vigtige information, som du gerne vil have brugeren til at læse først.</p>
-        </div>
+    <div class="a4-page" style="min-height: auto; width: 100%; max-width: 900px; overflow: visible;"> 
+        
+        <div class="main-header">
+            <div class="profile-img-container">
+                <img src="mig.jpg" alt="Profilbillede Simon Hvidtfeldt">
+            </div>
 
-        <div class="language-buttons">
-            <a href="da/Forside.html" class="btn">Dansk</a>
-            <a href="en/front_page.html" class="btn">English</a>
+            <div class="header-text" style="margin-bottom: 0px;">
+                <h1>Simon</h1>
+                <h2>H. Hvidtfeldt</h2>
+            </div>
+
+            <div class="title-badge" style="bottom: -80px;">
+                Universitetsstuderende: Machine Learning og Datavidenskab
+            </div>
         </div>
+        <div class="splash-content">
+            <div class="splash-text">
+                <h2 style="font-size: 1.8rem; color: #335372; margin-bottom: 10px;">Velkommen til min portefølje.</h2>
+                <p>På min portefølje-hjemmeside er det muligt at klikke ind på de forskellige sektioner, på samme måde som du vælger foretrukket sprog nedenunder.</p>
+                
+                <br>
+                
+                <h2 style="font-size: 1.8rem; color: #335372; margin-bottom: 10px;"><i>Welcome to my portfolio.</i></h2>
+                <p><i>On my portfolio website, you can click on the different sections to explore more, just like you choose your preferred language below.</i></p>
+            </div>
+
+            <div style="display: flex; align-items: center; justify-content: center; width: 100%; margin: 40px 0 0;">
+                
+                <div class="section-heading from-left" style="flex: 1; margin: 0;">
+                    <a href="da/Forside.html" class="badge" style="padding: 12px 30px; font-size: 1.1rem;">Dansk Version</a>
+                    <div class="line" style="flex-grow: 1; width: auto; margin-left: -40px; margin-right: -20px;"></div>
+                </div>
+
+                <div style="width: 40px; flex-shrink: 0;"></div>
+
+                <div class="section-heading" style="flex: 1; margin: 0;">
+                    <a href="en/front_page.html" class="badge" style="padding: 12px 30px; font-size: 1.1rem;">English Version</a>
+                    <div class="line" style="flex-grow: 1; width: auto; margin-left: -20px; margin-right: -40px;"></div>
+                </div>
+
+            </div>
+            
+        </div>
+        
     </div>
 
 </body>
