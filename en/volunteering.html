@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frivillighed - Simon H. Hvidtfeldt</title> <link rel="stylesheet" href="style.css">
+    <title>Volunteering - Simon H. Hvidtfeldt</title> <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -17,11 +17,11 @@
         </div>
         
         <div class="profile-img-container">
-            <img src="mig.jpg" alt="Simon Hvidtfeldt">
+            <img src="../mig.jpg" alt="Simon Hvidtfeldt">
         </div>
 
         <div class="title-badge">
-            Universitetsstuderende: Machine Learning og Datavidenskab
+            University Student: Machine Learning and Data Science
         </div>
     </header>
 
@@ -32,8 +32,8 @@
 <section class="full-width" style="margin-bottom: 40px;">
     
     <div class="section-heading from-left">
-        <a href="index.html" class="badge">
-            <i class="fas fa-arrow-left"></i> Tilbage til CV
+        <a href="front_page.html" class="badge">
+            <i class="fas fa-arrow-left"></i> Back to CV
         </a>
         <span class="line"></span>
     </div>
@@ -46,7 +46,7 @@
                     <button class="accordion-header active" onclick="toggleAccordion(this)">
                         <span>
                             <i class="fas fa-hands-helping" style="margin-right: 10px;"></i>
-                            Frivillighed
+                            Volunteering
                         </span>
                         <i class="fas fa-chevron-down"></i></button>
                         <div class="accordion-content" style="max-height: none;">
@@ -55,17 +55,17 @@
                             
                                 <div class="accordion-item">
                                     <button class="accordion-header" onclick="toggleAccordion(this)">
-                                        <span>Håndboldtræner ved NBSIF, Kolding</span>
+                                        <span>Handball Coach at NBSIF, Kolding</span>
                                         <i class="fas fa-chevron-down"></i>
                                     </button>
                                     <div class="accordion-content">
                                         <div class="inner-padding">
-                                            <p>I min rolle som træner for de yngste årgange (U6 & U8) havde jeg ansvaret for at skabe en tryg og lærerig ramme gennem sporten. Mine primære ansvarsområder inkluderede:</p>
+                                            <p>In my role as a coach for the youngest age groups (U6 & U8), I was responsible for creating a safe and educational environment through sports. My primary responsibilities included:</p>
         
                                             <ul class="tool-list" style="margin-top: 10px;">
-                                                <li><strong>Planlægning og strukturering:</strong> Udvikling af ugentlige træningsprogrammer med fokus på motorik, boldleg og tekniske øvelser tilpasset børnenes udviklingstrin.</li>
-                                                <li><strong>Dommergerning:</strong> Ansvarlig for afvikling af kampe, hvilket krævede hurtig beslutningstagen, konflikthåndtering og evnen til at formidle regler på en letforståelig måde.</li>
-                                                <li><strong>Ledelse og motivation:</strong> Formidling af holdånd og gejst, samt koordination med forældre og øvrige trænere.</li>
+                                                <li><strong>Planning and structuring:</strong> Development of weekly training programs focusing on motor skills, ball games, and technical exercises adapted to the children's developmental stage.</li>
+                                                <li><strong>Refereeing:</strong> Responsible for officiating matches, which required quick decision-making, conflict resolution, and the ability to communicate rules in an easily understandable way.</li>
+                                                <li><strong>Leadership and motivation:</strong> Fostering team spirit and enthusiasm, as well as coordinating with parents and other coaches.</li>
                                             </ul>
                                             
                                             
@@ -74,12 +74,12 @@
                                 </div>
                                 <div class="accordion-item">
                                     <button class="accordion-header" onclick="toggleAccordion(this)">
-                                        <span>Bloddonor</span>
+                                        <span>Blood Donor</span>
                                         <i class="fas fa-chevron-down"></i>
                                     </button>
                                     <div class="accordion-content">
                                         <div class="inner-padding">
-                                            <p>Der er ikke så meget mere at sige. Jeg donoerer blod, når de skriver at de har brug for det.</p>
+                                            <p>There isn't much more to say. I donate blood whenever they write that they need it.</p>
                                             
 
 
@@ -114,13 +114,13 @@
                 panel.style.maxHeight = panel.scrollHeight + "px";
             }
 
-            // Håndtering af indlejrede lister (Så den ydre boks udvider sig)
+            // Handling nested lists (So the outer box expands)
             var parentContent = this.parentElement.closest('.accordion-content');
             if (parentContent && parentContent.style.maxHeight) {
                  if (this.classList.contains("active")) {
                     parentContent.style.maxHeight = (parentContent.scrollHeight + panel.scrollHeight) + "px";
                 } else {
-                    // Lille fix for at sikre flydende animation når man lukker
+                    // Small fix to ensure smooth animation when closing
                     parentContent.style.maxHeight = parentContent.scrollHeight + "px";
                 }
             }

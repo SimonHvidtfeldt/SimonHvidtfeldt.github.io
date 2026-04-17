@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kompetencer - Simon H. Hvidtfeldt</title> 
-    <link rel="stylesheet" href="style.css">
+    <title>Skills - Simon H. Hvidtfeldt</title> 
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
@@ -20,11 +20,11 @@
         </div>
         
         <div class="profile-img-container">
-            <img src="mig.jpg" alt="Simon Hvidtfeldt">
+            <img src="../mig.jpg" alt="Simon Hvidtfeldt">
         </div>
 
         <div class="title-badge">
-            Universitetsstuderende: Machine Learning og Datavidenskab
+            University Student: Machine Learning and Data Science
         </div>
     </header>
 
@@ -32,8 +32,8 @@
         
         <section class="full-width" style="margin-bottom: 40px;">
             <div class="section-heading from-left">
-                <a href="index.html" class="badge">
-                    <i class="fas fa-arrow-left"></i> Tilbage til CV
+                <a href="front_page.html" class="badge">
+                    <i class="fas fa-arrow-left"></i> Back to CV
                 </a>
                 <span class="line"></span>
             </div>
@@ -50,13 +50,13 @@
     <button class="accordion-header active" onclick="toggleAccordion(this); setTimeout(drawGraph, 200);">
         <span style="font-weight: bold;">
                 <i class="fas fa-chart-line" style="margin-right: 10px;"></i>
-                Data og analyse
+                Data and Analysis
         </span>
         <i class="fas fa-chevron-down" style="transform: rotate(180deg); transition: transform 0.3s;"></i>
     </button>
     
     <div class="accordion-content" style="max-height: none;"> <div class="inner-padding">
-            <p class="summary-text">Gennem mit studie har jeg opbygget et solidt fundament inden for matematisk modellering og programmering. Bemærk, at mindmappet er dynamisk, så det vil blive ved med at rotere indtil det har fundet et passende layout. Det er også muligt at zomme ind, og highligte forbindelser ved at holde mussen over elementer.</p>
+            <p class="summary-text">Through my studies, I have built a solid foundation in mathematical modeling and programming. Note that the mind map is dynamic, so it will continue to rotate until it has found an appropriate layout. It is also possible to zoom in and highlight connections by hovering the mouse over elements.</p>
             
             <div id="skill-graph-ml" style="height: 600px; width: 100%; margin: 15px 0; background: #ffffff; border-radius: 8px;"></div>
 
@@ -69,14 +69,14 @@
     <button class="accordion-header active" onclick="toggleAccordion(this)">
         <span style="font-weight: bold;">
                 <i class="fas fa-bullhorn" style="margin-right: 10px;"></i>
-                Kommunikation & Formidling
+                Communication & Presentation
         </span>
         <i class="fas fa-chevron-down" style="transform: rotate(180deg); transition: transform 0.3s;"></i>
     </button>
     
     <div class="accordion-content" style="max-height: 500px;">
         <div class="inner-padding">
-                            <p class="summary-text">Med en baggrund i Dansk har jeg stærke kompetencer i at formidle komplekst stof præcist og korrekt. Bemærk, at mindmappet er dynamisk, så det vil blive ved med at rotere indtil det har fundet et passende layout. Det er også muligt at zomme ind, og highligte forbindelser ved at holde mussen over elementer.</p>
+                            <p class="summary-text">With a background in Danish, I have strong skills in conveying complex material accurately and precisely. Note that the mind map is dynamic, so it will continue to rotate until it has found an appropriate layout. It is also possible to zoom in and highlight connections by hovering the mouse over elements.</p>
                             <div id="skill-graph-dansk" style="height: 600px; width: 100%; margin: 15px 0; background: #ffffff; border-radius: 8px;"></div>
                             
                         </div>
@@ -96,89 +96,90 @@
 
 
 </div> <script>
-// 1. Vi samler din accordion-logik
+// 1. Collecting your accordion logic
 function toggleAccordion(element) {
     const content = element.nextElementSibling;
     element.classList.toggle("active");
 
-    // 1. Luk hvis den er åben
+    // 1. Close if it's open
     if (content.style.maxHeight && content.style.maxHeight !== "0px") {
         content.style.maxHeight = null;
     } 
-    // 2. Åbn og tegn hvis den er lukket
+    // 2. Open and draw if it's closed
     else {
-        // Vi beregner højden dynamisk (scrollHeight)
+        // We calculate height dynamically (scrollHeight)
         content.style.maxHeight = content.scrollHeight + "px";
         
-        // Vi bruger .trim() for at fjerne eventuelle usynlige mellemrum i teksten
+        // We use .trim() to remove any invisible spaces in the text
         const buttonText = element.innerText;
 
-        if (buttonText.includes("Data og analyse")) {
+        // UPDATED: Now checking for the English titles
+        if (buttonText.includes("Data and Analysis")) {
             setTimeout(drawGraph, 200);
         } 
-        else if (buttonText.includes("Kommunikation & Formidling")) {
+        else if (buttonText.includes("Communication & Presentation")) {
             setTimeout(drawDanskGraph, 200);
         }
     }
 
-    // 3. Pil-animation (hvis du har en)
+    // 3. Arrow animation (if you have one)
     const icon = element.querySelector('i');
     if (icon) {
         icon.style.transform = element.classList.contains("active") ? "rotate(180deg)" : "rotate(0deg)";
     }
 }
 
-// 2. Din graf-funktion
+// 2. Your graph function
 function drawGraph() {
     const container = document.getElementById('skill-graph-ml');
     if (!container) return;
 
 var nodes = new vis.DataSet([
-    // Niveau 0: Hovedfokus
+    // Level 0: Main focus
     { id: 'DS', label: 'Data Science & ML', group: 'main', level: 0 },
 
-    // Niveau 1: Dine fire søjler
-    { id: 'MATH', label: 'Matematisk Fundament', group: 'main', level: 1 },
-    { id: 'ALG', label: 'Algoritmer & Teori', group: 'main', level: 1 },
-    { id: 'SYS', label: 'Systemer & Kode', group: 'main', level: 1 },
+    // Level 1: Your four pillars
+    { id: 'MATH', label: 'Mathematical Foundation', group: 'main', level: 1 },
+    { id: 'ALG', label: 'Algorithms & Theory', group: 'main', level: 1 },
+    { id: 'SYS', label: 'Systems & Code', group: 'main', level: 1 },
 
-    // Niveau 2: Fag under Matematik
-    { id: 10, label: 'Lineær Algebra', group: 'math', level: 2 },
-    { id: 11, label: 'Matematisk Analyse', group: 'math', level: 2 },
-    { id: 12, label: 'Sandsynlighed & Statistik', group: 'math', level: 2 },
-    { id: 13, label: 'Diskret Matematik', group: 'math', level: 2 },
+    // Level 2: Subjects under Math
+    { id: 10, label: 'Linear Algebra', group: 'math', level: 2 },
+    { id: 11, label: 'Mathematical Analysis', group: 'math', level: 2 },
+    { id: 12, label: 'Probability & Statistics', group: 'math', level: 2 },
+    { id: 13, label: 'Discrete Mathematics', group: 'math', level: 2 },
 
-    // Niveau 2: Fag under DS & ML (Her bruger vi DS som forælder i edges senere)
+    // Level 2: Subjects under DS & ML (Here we use DS as a parent in edges later)
     { id: 20, label: 'Machine Learning A', group: 'ds', level: 2 },
     { id: 21, label: 'Deep Learning', group: 'ds', level: 2 },
-    { id: 22, label: 'Grundlæggende Data Science', group: 'ds', level: 2 },
+    { id: 22, label: 'Fundamentals of Data Science', group: 'ds', level: 2 },
     { id: 23, label: 'Models for Complex Systems', group: 'ds', level: 2 },
 
-    // Niveau 2: Fag under Algoritmer
-    { id: 30, label: 'Algoritmer & Datastrukturer', group: 'alg', level: 2 },
-    { id: 31, label: 'Randomiserede Algoritmer', group: 'alg', level: 2 },
-    { id: 32, label: 'Videnskabsteori', group: 'alg', level: 2 },
+    // Level 2: Subjects under Algorithms
+    { id: 30, label: 'Algorithms & Data Structures', group: 'alg', level: 2 },
+    { id: 31, label: 'Randomized Algorithms', group: 'alg', level: 2 },
+    { id: 32, label: 'Philosophy of Science', group: 'alg', level: 2 },
 
-    // Niveau 2: Fag under Systemer
+    // Level 2: Subjects under Systems
     { id: 40, label: 'High Performance Prog.', group: 'sys', level: 2 },
     { id: 41, label: 'Databases & Info Systems', group: 'sys', level: 2 },
-    { id: 42, label: 'Prog. & Problemløsning', group: 'sys', level: 2 }
+    { id: 42, label: 'Prog. & Problem Solving', group: 'sys', level: 2 }
 ]);
 
 var edges = new vis.DataSet([
-    // Primære forbindelser (Hierarkiet)
+    // Primary connections (Hierarchy)
     { from: 'DS', to: 'MATH' }, { from: 'DS', to: 'ALG' }, { from: 'DS', to: 'SYS' },
     { from: 'MATH', to: 10 }, { from: 'MATH', to: 11 }, { from: 'MATH', to: 12 }, { from: 'MATH', to: 13 },
     { from: 'DS', to: 20 }, { from: 'DS', to: 21 }, { from: 'DS', to: 22 }, { from: 'DS', to: 23 },
     { from: 'ALG', to: 30 }, { from: 'ALG', to: 31 }, { from: 'ALG', to: 32 },
     { from: 'SYS', to: 40 }, { from: 'SYS', to: 41 }, { from: 'SYS', to: 42 },
 
-    // TVÆRGÅENDE FORBINDELSER (Det der gør det interconnected)
-    { from: 10, to: 20, label: 'ML Fundament', dashes: true, color: '#6684a3' }, // Lin.Alg -> ML
-    { from: 12, to: 20, label: 'Statistik', dashes: true, color: '#6684a3' },   // Statistik -> ML
-    { from: 13, to: 30, label: 'Logik', dashes: true, color: '#6684a3' },       // Diskret Mat -> Algoritmer
-    { from: 42, to: 30, label: 'Implementering', dashes: true, color: '#6684a3' }, // Prog -> Algoritmer
-    { from: 30, to: 20, label: 'Effektivitet', dashes: true, color: '#335372' }, // Algoritmer -> ML
+    // CROSS-CONNECTIONS (What makes it interconnected)
+    { from: 10, to: 20, label: 'ML Foundation', dashes: true, color: '#6684a3' }, // Lin.Alg -> ML
+    { from: 12, to: 20, label: 'Statistics', dashes: true, color: '#6684a3' },   // Statistics -> ML
+    { from: 13, to: 30, label: 'Logic', dashes: true, color: '#6684a3' },       // Discrete Math -> Algorithms
+    { from: 42, to: 30, label: 'Implementation', dashes: true, color: '#6684a3' }, // Prog -> Algorithms
+    { from: 30, to: 20, label: 'Efficiency', dashes: true, color: '#335372' }, // Algorithms -> ML
     { from: 20, to: 21, label: 'Neural Nets', width: 3 },                      // ML -> Deep Learning
     { from: 41, to: 22, label: 'Data Pipeline', dashes: true }                 // DB -> Data Science
 ]);
@@ -187,29 +188,29 @@ var data = { nodes: nodes, edges: edges };
 var options = {
     nodes: {
         shape: 'box',
-        margin: 20,          // Masser af luft inde i kassen til den store tekst
+        margin: 20,          // Plenty of space inside the box for large text
         borderRadius: 10,
         font: { 
-            size: 24,        // KRAFTIG skrift til alle fag
+            size: 24,        // BOLD font for all subjects
             face: 'Arial',
             multi: true,
-            vadjust: 0       // Sikrer at teksten er centreret vertikalt
+            vadjust: 0       // Ensures the text is vertically centered
         },
-        borderWidth: 3       // Tykkere ramme for at matche den store tekst
+        borderWidth: 3       // Thicker border to match the large text
     },
 edges: {
     arrows: { to: { enabled: true, scaleFactor: 0.6 } },
     smooth: { type: 'continuous', roundness: 0.2 },
     color: {
-        color: '#335372',      // Din klassiske blå (standard)
-        highlight: '#335372',  // Den samme blå når den lyser op
-        hover: '#335372',      // Den samme blå ved hover
-        inherit: false,        // Vigtigt for at overskrive gruppefarverne
-        opacity: 0.2           // Svag som standard
+        color: '#335372',      // Your classic blue (default)
+        highlight: '#335372',  // The same blue when highlighted
+        hover: '#335372',      // The same blue on hover
+        inherit: false,        // Important to override group colors
+        opacity: 0.2           // Faint by default
     },
     width: 3,
     selectionWidth: 9,
-    hoverWidth: 6          // Gør den stadig tykkere, så man kan se den er valgt
+    hoverWidth: 6          // Still makes it thicker so you can see it's selected
 },
 
 interaction: {
@@ -217,18 +218,18 @@ interaction: {
     hoverConnectedEdges: true,
     selectConnectedEdges: true,
     multiselect: false,
-    navigationButtons: false, // Holder interfacet rent
+    navigationButtons: false, // Keeps the interface clean
     zoomView: true
 },
     physics: {
         enabled: true,
         solver: 'forceAtlas2Based',
         forceAtlas2Based: {
-            gravitationalConstant: -100, // EKSTREM frastødning så de store kasser har plads
-            centralGravity: 0.002,      // Næsten ingen træk mod midten
-            springLength: 300,          // Meget lange forbindelser
+            gravitationalConstant: -100, // EXTREME repulsion so large boxes have space
+            centralGravity: 0.002,      // Almost no pull towards the center
+            springLength: 300,          // Very long connections
             springConstant: 0.04,
-            avoidOverlap: 1             // 100% vigtigt nu hvor kasserne er gigantiske
+            avoidOverlap: 1             // 100% important now that the boxes are gigantic
         },
         stabilization: { iterations: 200 }
     },
@@ -240,7 +241,7 @@ interaction: {
     groups: {
         main: { 
             color: { background: '#335372', border: '#253d54' }, 
-            font: { color: 'white', size: 30, bold: true } // OVERSIZE til hovedkategorier
+            font: { color: 'white', size: 30, bold: true } // OVERSIZE for main categories
         },
         math: { color: { background: '#f4f6f8', border: '#6684a3' } },
         ds: { color: { background: '#e1e8ed', border: '#335372' } },
@@ -257,41 +258,41 @@ function drawDanskGraph() {
     const container = document.getElementById('skill-graph-dansk');
     if (!container) return;
 
-    // 1. Definer noderne
+    // 1. Define nodes
     var nodes = new vis.DataSet([
-        { id: 'LIT', label: 'Litteraturanalyse', group: 'main', level: 0 },
-        { id: 'GRA', label: 'Grammatik og tekst', group: 'main', level: 0 },
+        { id: 'LIT', label: 'Literature Analysis', group: 'main', level: 0 },
+        { id: 'GRA', label: 'Grammar and Text', group: 'main', level: 0 },
 
-        { id: 101, label: 'Kritisk tænkning', group: 'skill', level: 1 },
-        { id: 102, label: 'Kontekstuel analyse', group: 'skill', level: 1 },
-        { id: 103, label: 'Mønstergenkendelse i narrativer', group: 'skill', level: 1 },
-        { id: 104, label: 'Hermeneutisk metode', group: 'skill', level: 1 },
+        { id: 101, label: 'Critical Thinking', group: 'skill', level: 1 },
+        { id: 102, label: 'Contextual Analysis', group: 'skill', level: 1 },
+        { id: 103, label: 'Pattern Recognition in Narratives', group: 'skill', level: 1 },
+        { id: 104, label: 'Hermeneutic Method', group: 'skill', level: 1 },
 
-        { id: 201, label: 'Syntaktisk analyse', group: 'skill', level: 1 },
-        { id: 202, label: 'Strukturel sprogforståelse', group: 'skill', level: 1 },
-        { id: 203, label: 'Logisk systematik', group: 'skill', level: 1 },
-        { id: 204, label: 'Tekstuel kohærens', group: 'skill', level: 1 }
+        { id: 201, label: 'Syntactic Analysis', group: 'skill', level: 1 },
+        { id: 202, label: 'Structural Language Comprehension', group: 'skill', level: 1 },
+        { id: 203, label: 'Logical Systematics', group: 'skill', level: 1 },
+        { id: 204, label: 'Textual Coherence', group: 'skill', level: 1 }
     ]);
 
-    // 2. Definer forbindelserne (Edges)
+    // 2. Define connections (Edges)
     var edges = new vis.DataSet([
-        // Fra hovedfag til kompetencer
+        // From main subject to skills
         { from: 'LIT', to: 101 }, { from: 'LIT', to: 102 }, { from: 'LIT', to: 103 }, { from: 'LIT', to: 104 },
         { from: 'GRA', to: 201 }, { from: 'GRA', to: 202 }, { from: 'GRA', to: 203 }, { from: 'GRA', to: 204 },
 
-        // Broen mellem de to områder
-        { from: 'LIT', to: 'GRA', label: 'Sproglig analyse', width: 3, color: '#335372' },
-        { from: 203, to: 101, label: 'Logik', dashes: true },
-        { from: 202, to: 103, label: 'Struktur', dashes: true }
+        // The bridge between the two areas
+        { from: 'LIT', to: 'GRA', label: 'Linguistic Analysis', width: 3, color: '#335372' },
+        { from: 203, to: 101, label: 'Logic', dashes: true },
+        { from: 202, to: 103, label: 'Structure', dashes: true }
     ]);
 
-    // 3. Saml data i det objekt, Vis.js kræver
+    // 3. Collect data in the object Vis.js requires
     var data = {
         nodes: nodes,
         edges: edges
     };
 
-    // 4. Dine ønskede options (samme logik som ML-mappet)
+    // 4. Your desired options (same logic as the ML map)
     var options = {
         nodes: {
             shape: 'box',
@@ -303,9 +304,9 @@ function drawDanskGraph() {
             arrows: { to: { enabled: true, scaleFactor: 0.5 } },
             color: { 
                 color: '#335372', 
-                opacity: 0.2, // Svag streg som standard
-                highlight: '#335372', // Kraftig streg ved click
-                hover: '#335372'      // Kraftig streg ved hover
+                opacity: 0.2, // Faint line by default
+                highlight: '#335372', // Strong line on click
+                hover: '#335372'      // Strong line on hover
             },
             width: 3,
             selectionWidth: 9,
@@ -324,7 +325,7 @@ function drawDanskGraph() {
         },
         interaction: { 
             hover: true, 
-            hoverConnectedEdges: true, // Dette gør forbindelserne synlige ved hover
+            hoverConnectedEdges: true, // This makes connections visible on hover
             selectConnectedEdges: true 
         },
         groups: {
@@ -333,17 +334,17 @@ function drawDanskGraph() {
         }
     };
 
-    // 5. Initialiser netværket
+    // 5. Initialize the network
     var network = new vis.Network(container, data, options);
     
-    // 6. Sørg for at det zoomer pænt ind, når det er klar
+    // 6. Ensure it zooms in nicely when it's ready
     network.once("stabilizationIterationsDone", function() {
     network.fit({
         animation: { duration: 800 },
         padding: 50
     });
 
-    // NYT: Her tvinger vi accordionen til at åbne sig helt op efter grafen er landet
+    // NEW: Here we force the accordion to open up fully after the graph has landed
     const container = document.getElementById('skill-graph-dansk');
     const content = container.closest('.accordion-content');
     if (content) {
@@ -352,10 +353,10 @@ function drawDanskGraph() {
 });
 }
 
-// Husk at kalde funktionen i dit load-event
+// Remember to call the function in your load event
 window.addEventListener('load', function() {
-    drawGraph();      // Dit ML-map
-    drawDanskGraph(); // Dit nye Dansk-map
+    drawGraph();      // Your ML map
+    drawDanskGraph(); // Your new Danish map
 });
 </script>
 </body>

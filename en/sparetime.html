@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I min fritid | Personligt - Simon H. Hvidtfeldt</title> <link rel="stylesheet" href="style.css">
+    <title>In my free time | Personal - Simon H. Hvidtfeldt</title> <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -17,11 +17,11 @@
         </div>
         
         <div class="profile-img-container">
-            <img src="mig.jpg" alt="Simon Hvidtfeldt">
+            <img src="../mig.jpg" alt="Simon Hvidtfeldt">
         </div>
 
         <div class="title-badge">
-            Universitetsstuderende: Machine Learning og Datavidenskab
+            University Student: Machine Learning and Data Science
         </div>
     </header>
 
@@ -30,8 +30,8 @@
 <section class="full-width" style="margin-bottom: 40px;">
     
     <div class="section-heading from-left">
-        <a href="index.html" class="badge">
-            <i class="fas fa-arrow-left"></i> Tilbage til CV
+        <a href="front_page.html" class="badge">
+            <i class="fas fa-arrow-left"></i> Back to CV
         </a>
         <span class="line"></span>
     </div>
@@ -43,7 +43,7 @@
                     <button class="accordion-header active" onclick="toggleAccordion(this)">
                         <span>
                             <i class="fas fa-user-circle"></i>
-                            I min fritid | Personligt
+                            In my free time | Personal
                         </span>
                         <i class="fas fa-chevron-down"></i></button>
                         <div class="accordion-content" style="max-height: none;">
@@ -51,16 +51,15 @@
                                 <div class="accordion-container" style="border: none; display: flex; flex-direction: column; gap: 10px;">
                             
                                                     <p class="summary-text">
-                                                        Når jeg ikke er ude på Københavns Universitet, så bruger jeg min tid på min kæreste, mine venner, eller arbejde. 
+                                                        When I am not at the University of Copenhagen, I spend my time with my girlfriend, my friends, or working. 
                                                     </p>    
                                                     <p class="summary-text">
-                                                        Inden jeg flyttede til København brugte jeg også rigtig meget af min fritid på at spille håndbold, og det er stadig noget jeg følger tæt. 
-                                                        Da jeg var yngre, og spillede for Vojens Gymnastik og Idrætsefterskole, så var det første gange i deres historie, at de kvalificerede sig til det danske mesterskab, hvor vi endte med at få en respektabel 8 plads.
-                                                        Da jeg flyttede tilbage til Kolding gik mit knæ desværre afled under en kamp, og det har været en udfordring for mig at komme tilbage. Derfor bruger mig og min gamle holdkammerat i stedet tiden på
-                                                        at se Gladsaxe IF spille, og drikke en øl dertil. Det er en hyggelig måde at holde sig i kontakt med sporten, og det sociale aspekt af det.
+                                                        Before moving to Copenhagen, I also spent a lot of my free time playing handball, and it is still something I follow closely. 
+                                                        When I was younger and played for Vojens Gymnastik og Idrætsefterskole, it was the first time in their history that they qualified for the Danish Championship, where we ended up getting a respectable 8th place.
+                                                        When I moved back to Kolding, my knee unfortunately dislocated during a match, and it has been a challenge for me to make a comeback. Therefore, an old teammate and I spend our time watching Gladsaxe IF play while having a beer. It is a great way to stay in touch with the sport and the social aspect of it.
                                                     </p>
                                                     <p class="summary-text">
-                                                        Mine gamle gymnasievenner og jeg har desvæære valgt at placere sig i forskellige dele af landet, så det er ikke så ofte vi ses, men når vi gør, så er det altid hyggeligt at catche up, og høre om hvad der sker i hinandens liv. Det er også en god måde at få et break fra studiet, og bare have det sjovt sammen. 
+                                                        My old high school friends and I have unfortunately chosen to settle in different parts of the country, so we don't see each other that often, but when we do, it is always nice to catch up and hear what is happening in each other's lives. It is also a good way to get a break from my studies and just have fun together. 
                                                     </p>
                                                 </div>
                                             </div>
@@ -95,13 +94,13 @@
                 panel.style.maxHeight = panel.scrollHeight + "px";
             }
 
-            // Håndtering af indlejrede lister (Så den ydre boks udvider sig)
+            // Handling of nested lists (So the outer box expands)
             var parentContent = this.parentElement.closest('.accordion-content');
             if (parentContent && parentContent.style.maxHeight) {
                  if (this.classList.contains("active")) {
                     parentContent.style.maxHeight = (parentContent.scrollHeight + panel.scrollHeight) + "px";
                 } else {
-                    // Lille fix for at sikre flydende animation når man lukker
+                    // Small fix to ensure smooth animation when closing
                     parentContent.style.maxHeight = parentContent.scrollHeight + "px";
                 }
             }
